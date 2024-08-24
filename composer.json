@@ -1,0 +1,29 @@
+{
+  "name": "muhammedaldrubi/file-info-data-manager",
+  "description": "FilesInfoDataManagers package",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Pixel Company",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "php": "^7.3|^8.0",
+    "laravel/framework": "^8.75"
+  },
+  "autoload": {
+    "psr-4": {
+      "FilesInfoDataManagers\\": "src/"
+    }
+  },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "FilesInfoDataManagers\\ServiceProviders\\FilesInfoDataManagerServiceProvider"
+        ]
+      }
+  }
+
+}
