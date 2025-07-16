@@ -13,9 +13,19 @@ abstract class FilesInfoDataManager
 
     abstract protected function getDataFilesInfoPath() : string;
 
+    protected function readFileContent(string $path) : array
+    {
+        if($fileContent = File::get($path) )
+        {
+            return json_decode($fileContent , true) ?? [];
+        }
+
+        return [];
+    }
+
     protected function openJSONFileToUpdate() : self
     {
-        $this->InfoData = json_decode(File::get($this->FilesInfoJSONFilePath) , true) ?? [];
+        $this->InfoData = $this->readFileContent($this->FilesInfoJSONFilePath);
         return $this;
     }
 
